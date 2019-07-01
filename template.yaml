@@ -5,7 +5,7 @@ Transform: AWS::Serverless-2016-10-31
 
 Resources:
 
-  goFunction:
+  goPlaidFunction:
     Type: AWS::Serverless::Function
     Properties:
       Handler: main
