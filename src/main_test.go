@@ -16,8 +16,19 @@ func TestHandler(t *testing.T) {
 		{
 			// Test that the handler responds with the correct response
 			// when a valid name is provided in the HTTP body
-			request: events.APIGatewayProxyRequest{},
-			expect:  `{"Message":"hello world"}`,
+			request: events.APIGatewayProxyRequest{
+				HTTPMethod: "GET",
+			},
+			expect:  `{"Message":"hello world","Method":"GET"}`,
+			err:     nil,
+		},
+		{
+			// Test that the handler responds with the correct response
+			// when a valid name is provided in the HTTP body
+			request: events.APIGatewayProxyRequest{
+				HTTPMethod: "POST",
+			},
+			expect:  `{"Message":"hello world","Method":"POST"}`,
 			err:     nil,
 		},
 	}
