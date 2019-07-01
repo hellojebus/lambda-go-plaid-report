@@ -11,11 +11,16 @@ Resources:
       Handler: main
       Runtime: go1.x
       Events:
-          CatchAll:
-            Type: Api
-            Properties:
-              Path: "/{proxy+}"
-              Method: ANY
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
+        PostEvent:
+                  Type: Api
+                  Properties:
+                    Path: /
+                    Method: post
 
 Outputs:
 
